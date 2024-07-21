@@ -1,35 +1,20 @@
-def add(x, y):
-    return x + y
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
 
-def subtract(x, y):
-    return x - y
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
 
-def multiply(x, y):
-    return x * y
+print("Temperature Converter")
+print("1. Celsius to Fahrenheit")
+print("2. Fahrenheit to Celsius")
 
-def divide(x, y):
-    if y == 0:
-        return "Error! Division by zero."
-    return x / y
-
-print("Select operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
-
-choice = input("Enter choice(1/2/3/4): ")
-
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+choice = input("Enter choice(1/2): ")
 
 if choice == '1':
-    print(f"{num1} + {num2} = {add(num1, num2)}")
+    celsius = float(input("Enter temperature in Celsius: "))
+    print(f"{celsius}°C is {celsius_to_fahrenheit(celsius)}°F")
 elif choice == '2':
-    print(f"{num1} - {num2} = {subtract(num1, num2)}")
-elif choice == '3':
-    print(f"{num1} * {num2} = {multiply(num1, num2)}")
-elif choice == '4':
-    print(f"{num1} / {num2} = {divide(num1, num2)}")
+    fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+    print(f"{fahrenheit}°F is {fahrenheit_to_celsius(fahrenheit)}°C")
 else:
     print("Invalid input")
